@@ -43,28 +43,25 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
 
 ### Langkah-Langkah Menjalankan Proyek:
 
-1. **Persiapkan Lingkungan Pengembangan**:
-   - Pastikan Anda sudah menginstal Internet Computer Development Kit (ICDK) dan telah menyiapkan proyek baru.
-
-2. **Cloning Repository**:
+1. **Cloning Repository**:
    ```bash
    git clone https://github.com/your-repo/manajemen-buku.git
    cd manajemen-buku
    ```
 
-3. **Install Dependencies**:
+2. **Install Dependencies**:
    Pastikan semua dependensi yang dibutuhkan telah diinstal:
    ```bash
    cargo build --release
    ```
 
-4. **Menjalankan Proyek**:
+3. **Menjalankan Proyek**:
    Jalankan proyek dengan menggunakan perintah berikut:
    ```bash
    ic-cdk serve
    ```
 
-5. **Interaksi dengan API**:
+4. **Interaksi dengan API**:
    Setelah server berjalan, Anda dapat menggunakan perintah berikut untuk mengakses fungsi-fungsi:
    - `add_book`: Menambahkan buku baru.
      ```bash
@@ -87,5 +84,5 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
      ic-cdk-update --update delete_book 1
      ```
 
-6. **Mengelola Buku**:
+5. **Mengelola Buku**:
    - Gunakan endpoint-query dan endpoint-update untuk berinteraksi dengan data buku.
