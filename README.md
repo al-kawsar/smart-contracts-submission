@@ -55,27 +55,31 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
    cargo build --release
    ```
 
-3. **Menjalankan Proyek**:
-   Jalankan proyek dengan menggunakan perintah berikut:
-   ```bash
-   npm run gen-deploy
-  ```
-  Jika Anda menghadapi kesalahan izin saat menjalankan npm run gen-deploy, ikuti langkah-langkah berikut:
-
-  Jalankan perintah untuk memberikan izin eksekusi:
-
-  ```bash
-  chmod +x did.sh
-  ```
-  Jalankan kembali perintah deploy:
-  
-  ```bash
-  Copy code
-  npm run gen-deploy
-  ```
-Berikut adalah penyesuaian lengkap untuk bagian **Interaksi dengan API** dengan menggunakan canister `icp_rust_boilerplate_backend`:
+Berikut adalah perbaikan untuk format markdown dari bagian **Menjalankan Proyek**:
 
 ---
+
+3. **Menjalankan Proyek**:  
+Jalankan proyek dengan menggunakan perintah berikut:  
+```bash  
+npm run gen-deploy  
+```  
+
+Jika Anda menghadapi kesalahan izin saat menjalankan `npm run gen-deploy`, ikuti langkah-langkah berikut:  
+
+Jalankan perintah untuk memberikan izin eksekusi:  
+```bash  
+chmod +x did.sh  
+```  
+
+Jalankan kembali perintah deploy:  
+```bash  
+npm run gen-deploy  
+```  
+
+---
+
+Dengan format yang diperbaiki, dokumentasi menjadi lebih mudah dibaca dan mengikuti aturan markdown.
 
 4. **Interaksi dengan API**:  
    Setelah server berjalan, Anda dapat menggunakan perintah berikut untuk mengakses fungsi-fungsi:  
