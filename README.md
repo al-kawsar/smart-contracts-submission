@@ -36,29 +36,29 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
     - **rustc** versi 1.64 atau lebih tinggi:
         
         ```bash
-        $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-        $ source "$HOME/.cargo/env"
+        curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+        source "$HOME/.cargo/env"
         ```
         
     - **wasm32-unknown-unknown target**:
         
         ```bash
-        $ rustup target add wasm32-unknown-unknown
+        rustup target add wasm32-unknown-unknown
         ```
         
     - **candid-extractor**:
         
         ```bash
-        $ cargo install candid-extractor
+        cargo install candid-extractor
         ```
         
     - **dfx**:
         
         ```bash
-        $ DFX_VERSION=0.15.0 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
-        $ echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
-        $ source ~/.bashrc
-        $ dfx start --background
+        DFX_VERSION=0.15.0 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+        echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
+        source ~/.bashrc
+        dfx start --background
         ```
         
 3. **Menjalankan Proyek**: Setelah semua komponen diinstal, jalankan aplikasi:
