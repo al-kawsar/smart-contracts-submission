@@ -1,85 +1,97 @@
-# icp_rust_message_board_contract
+# Aplikasi Manajemen Buku
 
-### Requirements
-* rustc 1.64 or higher
-```bash
-$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-$ source "$HOME/.cargo/env"
-```
-* rust wasm32-unknown-unknown target
-```bash
-$ rustup target add wasm32-unknown-unknown
-```
-* candid-extractor
-```bash
-$ cargo install candid-extractor
-```
-* install `dfx`
-```bash
-$ DFX_VERSION=0.15.0 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
-$ echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
-$ source ~/.bashrc
-$ dfx start --background
-```
+## Deskripsi
+Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain menggunakan Internet Computer (IC) dengan dukungan stable storage menggunakan struktur data yang stabil (StableBTreeMap). Aplikasi ini menyediakan CRUD (Create, Read, Update, Delete) untuk mengelola buku, seperti menambahkan buku baru, meminjam, mengembalikan, dan menghapus buku.
 
-If you want to start working on your project right away, you might want to try the following commands:
+### Fitur:
+- Menambahkan buku baru ke dalam sistem.
+- Mengambil buku berdasarkan ID.
+- Mendapatkan daftar buku yang tersedia untuk dipinjam.
+- Meminjam buku dan mengatur siapa yang meminjam.
+- Mengembalikan buku.
+- Menghapus buku berdasarkan ID.
 
-```bash
-$ cd icp_rust_boilerplate/
-$ dfx help
-$ dfx canister --help
-```
+### Genre Buku:
+- Fiction
+- NonFiction
+- Science
+- Technology
 
-## Update dependencies
+## Prasyarat
+Sebelum menjalankan aplikasi ini, pastikan Anda memiliki lingkungan yang memenuhi prasyarat berikut:
+- [Internet Computer Development Kit (ICDK)](https://sdk.dfinity.org/docs/)
+- Pengetahuan dasar tentang Rust dan aplikasi dengan Internet Computer.
+- Akses ke lingkungan pengembangan seperti `cargo`, `ic-cdk`, dan tools terkait lainnya.
 
-update the `dependencies` block in `/src/{canister_name}/Cargo.toml`:
-```
-[dependencies]
-candid = "0.9.9"
-ic-cdk = "0.11.1"
-serde = { version = "1", features = ["derive"] }
-serde_json = "1.0"
-ic-stable-structures = { git = "https://github.com/lwshang/stable-structures.git", branch = "lwshang/update_cdk"}
-```
+## Instalasi & Menjalankan Aplikasi
 
-## did autogenerate
+### Persyaratan:
+- **rustc** versi 1.64 atau lebih tinggi
+  ```bash
+  $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+  $ source "$HOME/.cargo/env"
+  ```
+- **wasm32-unknown-unknown target**:
+  ```bash
+  $ rustup target add wasm32-unknown-unknown
+  ```
+- **candid-extractor**:
+  ```bash
+  $ cargo install candid-extractor
+  ```
+- **dfx**:
+  ```bash
+  $ DFX_VERSION=0.15.0 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+  $ echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
+  $ source ~/.bashrc
+  $ dfx start --background
+  ```
 
-Add this script to the root directory of the project:
-```
-https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh
-```
+### Langkah-Langkah Menjalankan Proyek:
 
-Update line 16 with the name of your canister:
-```
-https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh#L16
-```
+1. **Persiapkan Lingkungan Pengembangan**:
+   - Pastikan Anda sudah menginstal Internet Computer Development Kit (ICDK) dan telah menyiapkan proyek baru.
 
-After this run this script to generate Candid.
-Important note!
+2. **Cloning Repository**:
+   ```bash
+   git clone https://github.com/your-repo/manajemen-buku.git
+   cd manajemen-buku
+   ```
 
-You should run this script each time you modify/add/remove exported functions of the canister.
-Otherwise, you'll have to modify the candid file manually.
+3. **Install Dependencies**:
+   Pastikan semua dependensi yang dibutuhkan telah diinstal:
+   ```bash
+   cargo build --release
+   ```
 
-Also, you can add package json with this content:
-```
-{
-    "scripts": {
-        "generate": "./did.sh && dfx generate",
-        "gen-deploy": "./did.sh && dfx generate && dfx deploy -y"
-      }
-}
-```
+4. **Menjalankan Proyek**:
+   Jalankan proyek dengan menggunakan perintah berikut:
+   ```bash
+   ic-cdk serve
+   ```
 
-and use commands `npm run generate` to generate candid or `npm run gen-deploy` to generate candid and to deploy a canister.
+5. **Interaksi dengan API**:
+   Setelah server berjalan, Anda dapat menggunakan perintah berikut untuk mengakses fungsi-fungsi:
+   - `add_book`: Menambahkan buku baru.
+     ```bash
+     ic-cdk-query --query add_book "title: 'Buku Baru', author: 'Penulis', genre: 'Fiction'"
+     ```
+   - `get_book`: Mengambil buku berdasarkan ID.
+     ```bash
+     ic-cdk-query --query get_book 1
+     ```
+   - `borrow_book`: Meminjam buku.
+     ```bash
+     ic-cdk-update --update borrow_book 1
+     ```
+   - `return_book`: Mengembalikan buku.
+     ```bash
+     ic-cdk-update --update return_book 1
+     ```
+   - `delete_book`: Menghapus buku berdasarkan ID.
+     ```bash
+     ic-cdk-update --update delete_book 1
+     ```
 
-## Running the project locally
-
-If you want to test your project locally, you can use the following commands:
-
-```bash
-# Starts the replica, running in the background
-$ dfx start --background
-
-# Deploys your canisters to the replica and generates your candid interface
-$ dfx deploy
-```
+6. **Mengelola Buku**:
+   - Gunakan endpoint-query dan endpoint-update untuk berinteraksi dengan data buku.
