@@ -55,10 +55,6 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
    cargo build --release
    ```
 
-Berikut adalah perbaikan untuk format markdown dari bagian **Menjalankan Proyek**:
-
----
-
 3. **Menjalankan Proyek**:  
 Jalankan proyek dengan menggunakan perintah berikut:  
 ```bash  
