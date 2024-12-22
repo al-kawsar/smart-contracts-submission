@@ -17,12 +17,6 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
 - Science
 - Technology
 
-## Prasyarat
-Sebelum menjalankan aplikasi ini, pastikan Anda memiliki lingkungan yang memenuhi prasyarat berikut:
-- [Internet Computer Development Kit (ICDK)](https://sdk.dfinity.org/docs/)
-- Pengetahuan dasar tentang Rust dan aplikasi dengan Internet Computer.
-- Akses ke lingkungan pengembangan seperti `cargo`, `ic-cdk`, dan tools terkait lainnya.
-
 ## Instalasi & Menjalankan Aplikasi
 
 ### Persyaratan:
