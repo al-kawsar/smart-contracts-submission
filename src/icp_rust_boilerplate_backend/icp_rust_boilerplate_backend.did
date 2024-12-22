@@ -1,21 +1,24 @@
-type Error = variant { NotFound : record { msg : text } };
-type Message = record {
+type Book = record {
   id : nat64;
   title : text;
-  updated_at : opt nat64;
-  body : text;
-  created_at : nat64;
-  attachment_url : text;
+  borrower : opt text;
+  author : text;
+  genre : Genre;
+  is_available : bool;
 };
-type MessagePayload = record {
-  title : text;
-  body : text;
-  attachment_url : text;
+type BookPayload = record { title : text; author : text; genre : Genre };
+type Error = variant {
+  NotFound : record { msg : text };
+  InvalidOperation : record { msg : text };
 };
-type Result = variant { Ok : Message; Err : Error };
+type Genre = variant { NonFiction; Technology; Fiction; Science };
+type Result = variant { Ok : Book; Err : Error };
+type Result_1 = variant { Ok; Err : Error };
 service : {
-  add_message : (MessagePayload) -> (opt Message);
-  delete_message : (nat64) -> (Result);
-  get_message : (nat64) -> (Result) query;
-  update_message : (nat64, MessagePayload) -> (Result);
+  add_book : (BookPayload) -> (Result);
+  borrow_book : (nat64) -> (Result);
+  delete_book : (nat64) -> (Result_1);
+  get_available_books : () -> (vec Book) query;
+  get_book : (nat64) -> (Result) query;
+  return_book : (nat64) -> (Result);
 }
