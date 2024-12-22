@@ -45,8 +45,8 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
 
 1. **Cloning Repository**:
    ```bash
-   git clone https://github.com/your-repo/manajemen-buku.git
-   cd manajemen-buku
+   git clone https://github.com/al-kawsar/smart-contracts-submission.git
+   cd smart-contracts-submission
    ```
 
 2. **Install Dependencies**:
@@ -58,31 +58,53 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
 3. **Menjalankan Proyek**:
    Jalankan proyek dengan menggunakan perintah berikut:
    ```bash
-   ic-cdk serve
-   ```
+   npm run gen-deploy
+  ```
+  Jika Anda menghadapi kesalahan izin saat menjalankan npm run gen-deploy, ikuti langkah-langkah berikut:
 
-4. **Interaksi dengan API**:
-   Setelah server berjalan, Anda dapat menggunakan perintah berikut untuk mengakses fungsi-fungsi:
-   - `add_book`: Menambahkan buku baru.
-     ```bash
-     ic-cdk-query --query add_book "title: 'Buku Baru', author: 'Penulis', genre: 'Fiction'"
-     ```
-   - `get_book`: Mengambil buku berdasarkan ID.
-     ```bash
-     ic-cdk-query --query get_book 1
-     ```
-   - `borrow_book`: Meminjam buku.
-     ```bash
-     ic-cdk-update --update borrow_book 1
-     ```
-   - `return_book`: Mengembalikan buku.
-     ```bash
-     ic-cdk-update --update return_book 1
-     ```
-   - `delete_book`: Menghapus buku berdasarkan ID.
-     ```bash
-     ic-cdk-update --update delete_book 1
-     ```
+  Jalankan perintah untuk memberikan izin eksekusi:
+
+  ```bash
+  chmod +x did.sh
+  ```
+  Jalankan kembali perintah deploy:
+  
+  ```bash
+  Copy code
+  npm run gen-deploy
+  ```
+Berikut adalah penyesuaian lengkap untuk bagian **Interaksi dengan API** dengan menggunakan canister `icp_rust_boilerplate_backend`:
+
+---
+
+4. **Interaksi dengan API**:  
+   Setelah server berjalan, Anda dapat menggunakan perintah berikut untuk mengakses fungsi-fungsi:  
+   - `add_book`: Menambahkan buku baru.  
+     ```bash  
+     dfx canister call icp_rust_boilerplate_backend add_book '(record { title = "Buku Baru"; author = "Penulis"; genre = "Fiction"; })'  
+     ```  
+   - `get_book`: Mengambil buku berdasarkan ID.  
+     ```bash  
+     dfx canister call icp_rust_boilerplate_backend get_book '(0)'  
+     ```  
+   - `update_book`: Memperbarui informasi buku berdasarkan ID.  
+     ```bash  
+     dfx canister call icp_rust_boilerplate_backend update_book '(0, record { title = "Buku Diperbarui"; author = "Penulis"; genre = "Fiction"; })'  
+     ```  
+   - `borrow_book`: Meminjam buku.  
+     ```bash  
+     dfx canister call icp_rust_boilerplate_backend borrow_book '(0)'  
+     ```  
+   - `return_book`: Mengembalikan buku.  
+     ```bash  
+     dfx canister call icp_rust_boilerplate_backend return_book '(0)'  
+     ```  
+   - `delete_book`: Menghapus buku berdasarkan ID.  
+     ```bash  
+     dfx canister call icp_rust_boilerplate_backend delete_book '(0)'  
+     ```  
+
+Dengan perintah-perintah ini, Anda dapat dengan mudah mengelola buku dalam aplikasi blockchain menggunakan canister `icp_rust_boilerplate_backend`.
 
 5. **Mengelola Buku**:
    - Gunakan endpoint-query dan endpoint-update untuk berinteraksi dengan data buku.
