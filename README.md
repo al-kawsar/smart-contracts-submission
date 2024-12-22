@@ -17,9 +17,15 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
 - Science
 - Technology
 
-## Instalasi & Menjalankan Aplikasi
+### Langkah-Langkah Menjalankan Proyek:
 
-### Persyaratan:
+1. **Cloning Repository**:
+   ```bash
+   git clone https://github.com/al-kawsar/smart-contracts-submission.git
+   cd smart-contracts-submission
+   ```
+
+2. **Install**:
 - **rustc** versi 1.64 atau lebih tinggi
   ```bash
   $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
@@ -40,20 +46,6 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
   $ source ~/.bashrc
   $ dfx start --background
   ```
-
-### Langkah-Langkah Menjalankan Proyek:
-
-1. **Cloning Repository**:
-   ```bash
-   git clone https://github.com/al-kawsar/smart-contracts-submission.git
-   cd smart-contracts-submission
-   ```
-
-2. **Install Dependencies**:
-   Pastikan semua dependensi yang dibutuhkan telah diinstal:
-   ```bash
-   cargo build --release
-   ```
 
 3. **Menjalankan Proyek**:  
    Jalankan proyek dengan menggunakan perintah berikut: 
