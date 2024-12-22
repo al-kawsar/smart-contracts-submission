@@ -56,19 +56,17 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
    ```
 
 3. **Menjalankan Proyek**:  
-Jalankan proyek dengan menggunakan perintah berikut:  
+   Jalankan proyek dengan menggunakan perintah berikut: 
 ```bash  
 npm run gen-deploy  
 ```  
-
-Jika Anda menghadapi kesalahan izin saat menjalankan `npm run gen-deploy`, ikuti langkah-langkah berikut:  
-
-Jalankan perintah untuk memberikan izin eksekusi:  
+   Jika Anda menghadapi kesalahan izin saat menjalankan `npm run gen-deploy`, ikuti langkah-langkah berikut:  
+   
+   Jalankan perintah untuk memberikan izin eksekusi:  
 ```bash  
 chmod +x did.sh  
 ```  
-
-Jalankan kembali perintah deploy:  
+   Jalankan kembali perintah deploy:  
 ```bash  
 npm run gen-deploy  
 ```  
@@ -80,29 +78,35 @@ Dengan format yang diperbaiki, dokumentasi menjadi lebih mudah dibaca dan mengik
 4. **Interaksi dengan API**:  
    Setelah server berjalan, Anda dapat menggunakan perintah berikut untuk mengakses fungsi-fungsi:  
    - `add_book`: Menambahkan buku baru.  
-     ```bash  
-     dfx canister call icp_rust_boilerplate_backend add_book '(record { title = "Buku Baru"; author = "Penulis"; genre = "Fiction"; })'  
-     ```  
-   - `get_book`: Mengambil buku berdasarkan ID.  
-     ```bash  
-     dfx canister call icp_rust_boilerplate_backend get_book '(0)'  
-     ```  
+     
+```bash  
+dfx canister call icp_rust_boilerplate_backend add_book '(record { title = "Buku Baru"; author = "Penulis"; genre = "Fiction"; })'  
+```  
+   - `get_book`: Mengambil buku berdasarkan ID.
+       
+ ```bash  
+ dfx canister call icp_rust_boilerplate_backend get_book '(0)'  
+ ```  
    - `update_book`: Memperbarui informasi buku berdasarkan ID.  
-     ```bash  
-     dfx canister call icp_rust_boilerplate_backend update_book '(0, record { title = "Buku Diperbarui"; author = "Penulis"; genre = "Fiction"; })'  
-     ```  
+     
+```bash  
+dfx canister call icp_rust_boilerplate_backend update_book '(0, record { title = "Buku Diperbarui"; author = "Penulis"; genre = "Fiction"; })'  
+```  
    - `borrow_book`: Meminjam buku.  
-     ```bash  
-     dfx canister call icp_rust_boilerplate_backend borrow_book '(0)'  
-     ```  
+     
+```bash  
+dfx canister call icp_rust_boilerplate_backend borrow_book '(0)'  
+```  
    - `return_book`: Mengembalikan buku.  
-     ```bash  
-     dfx canister call icp_rust_boilerplate_backend return_book '(0)'  
-     ```  
+     
+```bash  
+dfx canister call icp_rust_boilerplate_backend return_book '(0)'  
+```  
    - `delete_book`: Menghapus buku berdasarkan ID.  
-     ```bash  
-     dfx canister call icp_rust_boilerplate_backend delete_book '(0)'  
-     ```  
+     
+```bash  
+dfx canister call icp_rust_boilerplate_backend delete_book '(0)'  
+```  
 
 Dengan perintah-perintah ini, Anda dapat dengan mudah mengelola buku dalam aplikasi blockchain menggunakan canister `icp_rust_boilerplate_backend`.
 
