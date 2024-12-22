@@ -57,19 +57,19 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
 
 3. **Menjalankan Proyek**:  
    Jalankan proyek dengan menggunakan perintah berikut: 
-```bash  
-npm run gen-deploy  
-```  
+   ```bash  
+   npm run gen-deploy  
+   ```  
    Jika Anda menghadapi kesalahan izin saat menjalankan `npm run gen-deploy`, ikuti langkah-langkah berikut:  
    
    Jalankan perintah untuk memberikan izin eksekusi:  
-```bash  
-chmod +x did.sh  
-```  
+   ```bash  
+   chmod +x did.sh  
+   ```  
    Jalankan kembali perintah deploy:  
-```bash  
-npm run gen-deploy  
-```  
+   ```bash  
+   npm run gen-deploy  
+   ```  
 
 ---
 
@@ -77,6 +77,7 @@ Dengan format yang diperbaiki, dokumentasi menjadi lebih mudah dibaca dan mengik
 
 4. **Interaksi dengan API**:  
    Setelah server berjalan, Anda dapat menggunakan perintah berikut untuk mengakses fungsi-fungsi:  
+   
    - `add_book`: Menambahkan buku baru.  
      
 ```bash  
