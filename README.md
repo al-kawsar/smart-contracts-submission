@@ -77,45 +77,8 @@ Aplikasi ini adalah sistem manajemen buku berbasis teknologi blockchain mengguna
 
 ---
 
-4. **📱 Interaksi dengan API**: Dengan server yang berjalan, Anda dapat dengan mudah berinteraksi menggunakan berbagai fungsi:
+4. **📱 Interaksi dengan API**: Dengan server yang berjalan:
+    ```bash
+    http://127.0.0.1:4943/?canisterId=bw4dl-smaaa-aaaaa-qaacq-cai&id=br5f7-7uaaa-aaaaa-qaaca-cai
+    ```
     
-    - **➕ Tambah Buku**:
-        
-        ```bash
-        dfx canister call icp_rust_boilerplate_backend add_book '(record { title = "Buku Baru"; author = "Penulis"; genre = "Fiction"; })'  
-        ```
-        
-    - **🔍 Lihat Buku**:
-        
-        ```bash
-        dfx canister call icp_rust_boilerplate_backend get_book '(0)'  
-        ```
-        
-    - **🔄 Perbarui Buku**:
-        
-        ```bash
-        dfx canister call icp_rust_boilerplate_backend update_book '(0, record { title = "Buku Diperbarui"; author = "Penulis"; genre = "Fiction"; })'  
-        ```
-        
-    - **📚 Pinjam Buku**:
-        
-        ```bash
-        dfx canister call icp_rust_boilerplate_backend borrow_book '(0)'  
-        ```
-        
-    - **↩️ Kembalikan Buku**:
-        
-        ```bash
-        dfx canister call icp_rust_boilerplate_backend return_book '(0)'  
-        ```
-        
-    - **❌ Hapus Buku**:
-        
-        ```bash
-        dfx canister call icp_rust_boilerplate_backend delete_book '(0)'  
-        ```
-        
-
-Dengan langkah-langkah ini, Anda dapat mengelola koleksi buku secara efektif dan menarik menggunakan teknologi blockchain mutakhir.
-
-5. **📚 Pengelolaan Buku**: Gunakan endpoint-query dan endpoint-update untuk memanage buku dengan fleksibilitas penuh.
