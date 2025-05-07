@@ -8,7 +8,9 @@ type Book = record {
 };
 type BookPayload = record { title : text; author : text; genre : Genre };
 type Error = variant {
+  InvalidInput : record { msg : text };
   NotFound : record { msg : text };
+  InternalError : record { msg : text };
   InvalidOperation : record { msg : text };
 };
 type Genre = variant { NonFiction; Technology; Fiction; Science };
@@ -20,5 +22,7 @@ service : {
   delete_book : (nat64) -> (Result_1);
   get_available_books : () -> (vec Book) query;
   get_book : (nat64) -> (Result) query;
+  list_all_books : () -> (vec Book) query;
   return_book : (nat64) -> (Result);
+  search_books_by_genre : (Genre) -> (vec Book) query;
 }
